@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List </title>
+    <link rel="stylesheet" href="list.css">
+    <link rel="stylesheet" href="jquery-ui.css">
+</head>
+<body>
+   <div class="container">
+       <h2 id="noob">Simple To-do List </h2>
+       <p id="truth">With basic colors</p>
+    <div class="main">
+        <h2 id="head">To do List </h2>
+        <hr>
+        <div class="item">
+        <input type="text" placeholder="Title" id="ip">
+        <button id="add" >Add To List</button>
+    </div>
+    </div>
+    <div class="tasks">
+    </div> 
+</div>
+</div>
+<p id="dialog">-----Don't tell Anyone-----<br>
+   <br> Made by copying Simple code snippets from different
+ sources , because the mini deb, that pieced this together, isn't 
+ good enough to do, this simple this on his own!!!</p>
+</body>
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<script src='gsap.js'></script>
+<script>
+    var x = $.noConflict();
+ 
+    x(document).ready( ()=> {
+
+// when task is added  
+
+        x('#add').click( ()=> {
+            
+    if(x('#ip').val().length !=0){
+        
+        var c = x('.tasks').html();
+        var y = `<p class='list'>
+        `+ x('#ip').val() + `<span id='span'>&times;</span></p>`;
+        x('.tasks').html(y+c);
+        x('#ip').val("");
+    }else{
+        alert('Enter Some Text');
+    }
+ });
+
+    
+
+// Trying something New
+
+x('#ip').focus( ()=>{
+    x('#ip').val("");
+});
+
+
+// when task is clicked   currently not working
+
+x(document).on('click','.list',function(){ 
+      x(this).toggleClass('break');
+   // console.log('fadeOut');
+});
+x(document).on('click','#span',function(){
+    x(this).parent().remove();
+});
+
+
+// Dialog box
+
+x('#noob').dblclick( ()=>{
+    x('#dialog').css('visibility',"visible");
+    x('#dialog').dialog({
+        modal:true,
+        draggable:false,
+        title:'Bingo! '
+    });
+});
+
+
+// Animations , still don't know enough  
+
+var t = gsap.timeline();
+t.from('#noob',{ duration:1,opacity:0,y:-70});
+t.from('.main',{ duration:1,opacity:0, x:-400})
+
+    });
+</script>
+</html>

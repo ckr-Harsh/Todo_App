@@ -1,0 +1,20 @@
+body{ margin:0;font-family: 'Courier New', Courier, monospace;}
+h2{ text-align: center;font-size: 35px;text-shadow: 2px 2px slategrey;color:rgba(71, 81, 219, 0.856);}
+.container{ margin:0 auto;width: fit-content;padding:10px;
+    }
+.main{ border:2px solid gray;border-radius: 5px;padding:10px;margin-top: 40px;
+    width:300px;font-size: 25px;}
+    button{ border-radius: 5px ;}
+.item{ display: flex;} #ip{ flex:1;padding: 5px;}  #add{ margin-left: 5px;}
+.list{ border:2px solid gray;border-radius: 5px;padding:10px;width:300px;
+    cursor: pointer; font-size: 25px;text-align: left;}
+     .break{ text-decoration: line-through;background-color: rgb(230, 198, 253);}
+     #tasks{ padding: 5px;margin: 0;}
+     
+.tasks>:nth-child(even){background-color: rgb(205, 170, 230); font-weight: bold;}
+.tasks>:nth-child(odd){background-color: rgb(151, 240, 166); font-weight: bold;}
+
+#span{ padding-left: 50px;text-align: right;cursor: pointer; font-size: 30px;}
+#dialog{ visibility: hidden;}
+#noob{ cursor: pointer;background-color: ivory;}
+#truth{ text-align: center;font-family: 'Courier New', Courier, monospace;}
